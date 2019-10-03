@@ -88,6 +88,11 @@ git status # 查看冲突文件
 # 查看合并分支情况
 git log --graph
 
+# 默认的Fast Forward模式合并分支后，会丢掉分支信息
+# 若保留分支信息，使用--no-ff方式
+git merge --no-ff -m "merge with no-ff" dev
+
+# master上不干活，dev上汇总团队所有人的工作，每个人一个branch日常干活
 ```
 
 

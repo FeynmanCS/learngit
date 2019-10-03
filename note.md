@@ -29,15 +29,38 @@ git reset HEAD -- [filename]
     将Stage中最新版本的文件回退到工作区
     如果已经git add文件，可先退回工作区，再用checkout丢弃修改
     如果已经git commit, 应先退回上一个版本，再退回工作区，最后丢弃修改
-
-
-
-
+git rm [filename]
+    删除stage中的文件
 
 3. 基本概念
 - 工作区：本地的工作环境
 - 版本库：分为暂存区和分支两个部分
     + add将工作区文件**复制**到暂存区
     + commit将暂存区文件一次性**移动**到分支
+- 远程仓库：Github
+    `cd ~`
+    `ssh-keygen -t rsa -C [email]`
+    将`id_rsa.pub`文件中的内容复制到Github中SSH Key的值
+
+4. 远程库操作
+```
+# 0. 在Github上建立好新repo，不添加Readme
+
+# 1. 关联远程库
+git remote add origin https://github.com/[Username]/[repo-name].git
+# 这里使用https协议，也可以使用ssh:git@github:[Username]/[repo-name].git
+
+# 2. 第一次推送master分支所有内容
+git push -u origin master
+
+# 3. 推送最新修改
+git push origin master
+
+# 4. 从远程库克隆：可以克隆别人的repo
+git clone git@github:[Username]/[repo-name].git
+```
+
+
+
 
 

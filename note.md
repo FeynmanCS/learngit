@@ -80,6 +80,7 @@ git merge [name]
 
 # 删除分支
 git branch -d [name]
+git branch -D [name] # 强行删除
 
 # 解决冲突
 git status # 查看冲突文件
@@ -93,6 +94,14 @@ git log --graph
 git merge --no-ff -m "merge with no-ff" dev
 
 # master上不干活，dev上汇总团队所有人的工作，每个人一个branch日常干活
+
+# 不提交手头工作，去别的branch做临时任务
+git stash  # 封存手头工作
+git checkout [other-branch]
+# do something
+git checkout [working-branch]
+git stash pop # 打开封印，并删除封印内容
+git cherry-pick [commit-id] # 将其它分支修改的内容合并到当前分支
 ```
 
 

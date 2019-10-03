@@ -5,32 +5,32 @@ git config --global user.email [user_email@xxx.com]
 ```
 
 2. 常见命令
-git init
-    初始化Git仓库
-git add [filenames]
-    添加文件到仓库
-git commit -m "descriptive message"
-    推送到分支
-git status
-    查看仓库当前状态
-git diff [filename]
-    查看文件变化
-git log
-    查看commit日志
-git reset --hard HEAD^
-    回退到上一个版本
-git reset --hard [commit id]
-    跳转到指定id的版本
-git reflog
-    查看版本跳转的历史
-git checkout -- [filename]
-    丢弃工作区的修改(未添加到stage)，退回到stage状态
-git reset HEAD -- [filename]
-    将Stage中最新版本的文件回退到工作区
-    如果已经git add文件，可先退回工作区，再用checkout丢弃修改
-    如果已经git commit, 应先退回上一个版本，再退回工作区，最后丢弃修改
+- git init
+    + 初始化Git仓库
+- git add [filenames]
+    + 添加文件到仓库
+- git commit -m "descriptive message"
+    + 推送到分支
+- git status
+    + 查看仓库当前状态
+- git diff [filename]
+    + 查看文件变化
+- git log
+    + 查看commit日志
+- git reset --hard HEAD^
+    + 回退到上一个版本
+- git reset --hard [commit id]
+    + 跳转到指定id的版本
+- git reflog
+    + 查看版本跳转的历史
+- git checkout -- [filename]
+    + 丢弃工作区的修改(未添加到stage)，退回到stage状态
+- git reset HEAD -- [filename]
+    + 将Stage中最新版本的文件回退到工作区
+    + 如果已经git add文件，可先退回工作区，再用checkout丢弃修改
+    + 如果已经git commit, 应先退回上一个版本，再退回工作区，最后丢弃修改
 git rm [filename]
-    删除stage中的文件
+    + 删除stage中的文件
 
 3. 基本概念
 - 工作区：本地的工作环境
@@ -60,7 +60,35 @@ git push origin master
 git clone git@github:[Username]/[repo-name].git
 ```
 
+5. 分支管理
+```
+# 查看分支
+git branch
 
+# 创建分支
+git branch [name]
+
+# 切换分支
+git checkout [name]
+git switch [name]
+
+# 创建+切换分支
+git branch -b [name]
+
+# 合并[name]到当前分支
+git merge [name]
+
+# 删除分支
+git branch -d [name]
+
+# 解决冲突
+git status # 查看冲突文件
+# 手动解决冲突，然后再`add`和`commit`
+
+# 查看合并分支情况
+git log --graph
+
+```
 
 
 
